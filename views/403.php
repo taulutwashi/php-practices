@@ -1,14 +1,11 @@
 <?php require 'partials/head.php'; ?>
 <?php require 'partials/nav.php'?>
 
-<?php require 'partials/banner.php'?>
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <p class="mb-6">
-            <a href="/notes" class="text-blue-500 underline"> Go Back</a>
-        </p>
         <!-- Your content -->
-        <p><?=$note['body']?></p>
+        <h3 class="text-center">this is unauthrize </h3>
     </div>
 </main>
 <?php require 'partials/footer.php'?>
+

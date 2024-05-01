@@ -14,6 +14,7 @@ class  Database
     public function query($query, $params=[])
     {
         $statement = $this->connection->prepare($query);
+        $statement->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, false);
         $statement->execute($params);
         return $statement;
     }

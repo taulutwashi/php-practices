@@ -1,12 +1,22 @@
 <?php
-$heading = 'My Notes';
-
 $config = require 'config.php';
+$db = new Database($config['database']);
 
-$database = new Database($config['database']);
+$heading = 'My Notes';
+$currentUserId = 2;
 
-$query = 'SELECT * FROM notes where id=:id';
 
-$note = $database->query($query,['id'=>$_GET['id']])->fetch();
+$note = $db->query('SELECT * FROM notes where id= :id', [
+    'id' => $_GET['id']]
+)->fetch();
+
+
+if(!$note){
+   abort();
+}
+
+if (intval($note['user_id']) !== $currentUserId) {
+    abort(Response::FORBIDDEN);
+}
 
 require "./views/note.view.php";
