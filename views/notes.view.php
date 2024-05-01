@@ -7,7 +7,9 @@
         <!-- Your content -->
         <p>This is Notes page </p>
         <?php foreach ($notes as $note): ?>
-            <li><?=$note['body']?></li>
+            <li>
+                <a href="/note?id=<?= $note['id']?>"><?=$note['body']?></a>
+            </li>
         <?php endforeach;?>
     </div>
 </main>
