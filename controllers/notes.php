@@ -10,6 +10,6 @@ $database = new Database($config['database']);
 
 $query = 'SELECT * FROM notes';
 
-$notes = $database->query($query)->fetchAll();
+$notes = $database->query($query)->get();
 
 require "./views/notes.view.php";

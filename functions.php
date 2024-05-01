@@ -10,3 +10,10 @@ function dd($var): void{
 function urlIs($path): bool{
     return $_SERVER['REQUEST_URI'] == $path;;
 }
+
+function authorize($condition, $status=Response::FORBIDDEN)
+{
+    if(!$condition){
+        abort($status);
+    }
+}
