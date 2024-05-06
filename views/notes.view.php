@@ -11,6 +11,9 @@
                 <a href="/note?id=<?= $note['id']?>"><?=$note['body']?></a>
             </li>
         <?php endforeach;?>
+        <p class="mt-10">
+            <a href="/note/create">Create Note</a>
+        </p>
     </div>
 </main>
 <?php require 'partials/footer.php'?>
