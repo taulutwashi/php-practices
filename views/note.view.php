@@ -8,7 +8,7 @@
             <a href="/notes" class="text-blue-500 underline"> Go Back</a>
         </p>
         <!-- Your content -->
-        <p><?=$note['body']?></p>
+        <p><?=htmlspecialchars($note['body'])?></p>
     </div>
 </main>
 <?php require 'partials/footer.php'?>
